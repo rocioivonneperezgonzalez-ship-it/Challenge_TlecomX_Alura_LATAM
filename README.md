@@ -80,10 +80,9 @@ A lo largo del notebook se generan visualizaciones para entender el comportamien
 2. Ejecuta:
 * jupyter notebook
 * abre TelecomX_LATAM.ipynb y corre las celdas
-
-Dependencias típicas:
-
-pip install pandas requests plotly matplotlib
-# Opcional (para exportar figuras plotly a PNG y que se vean en GitHub):
-pip install kaleido
-
+  
+---
+Nombre:Rocio Ivonne Pérez González 
+Curso: Análisis de Datos con Python
+Institución: Alura Latam 
+Fecha: 12 de Enero 2026
