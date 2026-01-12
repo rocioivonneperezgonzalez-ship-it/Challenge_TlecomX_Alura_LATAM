@@ -20,7 +20,12 @@ El objetivo principal del proyecto es:
 ## 2) Estructura del proyecto y organización de archivos
 
 Estructura recomendada del repositorio:
-
+.
+├── TelecomX_LATAM.ipynb         # Notebook principal con el EDA completo
+├── README.md                    # Documentación del proyecto (este archivo)
+└── (opcional)
+    ├── outputs/                 # Gráficas exportadas (png/html) para reportes
+    └── data/                    # Datos descargados localmente (si se decide guardar)
 
 ---
 
