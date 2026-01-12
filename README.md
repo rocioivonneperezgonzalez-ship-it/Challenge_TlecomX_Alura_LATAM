@@ -21,64 +21,69 @@ El objetivo principal del proyecto es:
 
 Estructura recomendada del repositorio:
 
-```bash
-.
-├── TelecomX_LATAM.ipynb         # Notebook principal con el EDA completo
-├── README.md                    # Documentación del proyecto (este archivo)
-└── (opcional)
-    ├── outputs/                 # Gráficas exportadas (png/html) para reportes
-    └── data/                    # Datos descargados localmente (si se decide guardar)
+
+---
 
 ## 3) Ejemplos de gráficas e insights obtenidos
 
 A lo largo del notebook se generan visualizaciones para entender el comportamiento del churn. Ejemplos:
 
-Distribución general del churn
+***Distribución general del churn***
+* Gráfica: Distribución de Churn (conteo + porcentaje).
+* Insight: el churn representa una fracción relevante de la base de clientes         (aprox. 1 de cada 4).
 
-Gráfica: Distribución de Churn (conteo + porcentaje).
+***Variables categóricas***
+* Género
+    Gráfica: Churn por género (barras agrupadas).
+    Insight: no se observan diferencias fuertes entre géneros (variable menos         determinante en este dataset).
 
-Insight: el churn representa una fracción relevante de la base de clientes (aprox. 1 de cada 4).
+***Tipo de contrato***
+* Gráficas: Proporción por tipo de contrato (dona) + Churn por tipo de contrato (barras).
+* Insight: el contrato mensual concentra más cancelaciones; contratos de mayor duración suelen mostrar mayor estabilidad.
 
-Variables categóricas
+***Tipo de internet***
+* Gráficas: Proporción por tipo de internet (dona) + Churn por tipo de internet (barras).
+* Insight: la fibra óptica concentra gran parte del churn, consistente con ser el grupo más numeroso.
 
-Género
+***Método de pago***
+* Gráficas: Proporción por método de pago (dona) + Churn por método de pago (barras).
+* Insight: el cheque electrónico presenta un churn particularmente alto; pagos automáticos se asocian a mayor retención.
 
-Gráfica: Churn por género (barras agrupadas).
+**Variables numéricas**
 
-Insight: no se observan diferencias fuertes entre géneros (variable menos determinante en este dataset).
+***Antigüedad del contrato (tenure / tiempo_contrato)***
+* Gráfica: Churn por antigüedad (barras / bins).
+* Insight: el churn se concentra en los primeros meses; clientes con más antigüedad tienden a permanecer.
 
-Tipo de contrato
+***Valor mensual***
+* Gráfica recomendada: Boxplot / Violin por churn.
+* Insight: diferencias en mediana y dispersión sugieren relación entre cargo mensual y churn (además de outliers que conviene analizar por segmentos).
 
-Gráficas: Proporción por tipo de contrato (dona) + Churn por tipo de contrato (barras).
+***Total cobrado***
+* Nota analítica: suele estar fuertemente relacionado con la antigüedad (variable acumulada), por lo que se interpreta con cautela y en conjunto con tiempo_contrato.
 
-Insight: el contrato mensual concentra más cancelaciones; contratos de mayor duración suelen mostrar mayor estabilidad.
+---
 
-Tipo de internet
+## 4) Instrucuiones para ejecutar el notebook
 
-Gráficas: Proporción por tipo de internet (dona) + Churn por tipo de internet (barras).
+**Opción A — Ejecutar en Google Colab (recomendado)**
+1. Abre TelecomX_LATAM.ipynb en Colab.
+2. Ejecuta todo:
+* Runtime / Entorno de ejecución → Run all
+3. El notebook descarga el dataset desde:
+* https://raw.githubusercontent.com/ingridcristh/challenge2-data-science/refs/heads/main/TelecomX_Data.json
 
-Insight: la fibra óptica concentra gran parte del churn, consistente con ser el grupo más numeroso.
+**Opción B — Ejecutar localmente (Jupyter)**
+1. Crea un entorno y asegúrate de tener instalado:
+* pandas, requests, plotly, matplotlib (y opcionalmente kaleido)
 
-Método de pago
+2. Ejecuta:
+* jupyter notebook
+* abre TelecomX_LATAM.ipynb y corre las celdas
 
-Gráficas: Proporción por método de pago (dona) + Churn por método de pago (barras).
+Dependencias típicas:
 
-Insight: el cheque electrónico presenta un churn particularmente alto; pagos automáticos se asocian a mayor retención.
+pip install pandas requests plotly matplotlib
+# Opcional (para exportar figuras plotly a PNG y que se vean en GitHub):
+pip install kaleido
 
-Variables numéricas
-
-Antigüedad del contrato (tenure / tiempo_contrato)
-
-Gráfica: Churn por antigüedad (barras / bins).
-
-Insight: el churn se concentra en los primeros meses; clientes con más antigüedad tienden a permanecer.
-
-Valor mensual
-
-Gráfica recomendada: Boxplot / Violin por churn.
-
-Insight: diferencias en mediana y dispersión sugieren relación entre cargo mensual y churn (además de outliers que conviene analizar por segmentos).
-
-Total cobrado
-
-Nota analítica: suele estar fuertemente relacionado con la antigüedad (variable acumulada), por lo que se interpreta con cautela y en conjunto con tiempo_contrato.
