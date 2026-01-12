@@ -85,6 +85,7 @@ A lo largo del notebook se generan visualizaciones para entender el comportamien
 * abre TelecomX_LATAM.ipynb y corre las celdas
   
 ---
+## Autoria
 Nombre:Rocio Ivonne Pérez González 
 Curso: Análisis de Datos con Python
 Institución: Alura Latam 
